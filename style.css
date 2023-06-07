@@ -289,6 +289,10 @@ main {
         display: block;
     }
 
+    .content h3 {
+        font-size: 3vh;
+    }
+
 }
 
 @media (min-width: 861px) {
