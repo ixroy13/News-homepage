@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* padding: 3% 6%; */
+    font-family: Inter;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+    transition: .2s;
+    font-size: 120%;
+}
+
+/* HEADER STYLE */
+
+header {
+    padding: 3% 6% 0;
+    display: flex;
+    min-height: 5rem;
+}
+
+header div {
+    width: 50%;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo-box img {
+    max-height: 2rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    column-gap: 2rem;
+}
+
+.menu-switch {
+    z-index: 99;
+    background: var(--Off-white);
+    border: none;
+}
+
+/* MAIN STYLE */
+
+main {
+    padding: 3% 6%;
+}
+
+.main-header {
+    padding-top: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 4.4rem;
+}
+
+.article p {
+    color: var(--Dark-grayish-blue);
+    font-size: 15px;
+    line-height: 1.5rem;
+}
+
+.article button {
+    border: none;
+    background: var(--Soft-red);
+    color: var(--Off-white);
+    font-weight: 700;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    max-width: 15rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.right {
+    padding: 1rem;
+    background: var(--Very-dark-blue);
+}
+
+.right h2 {
+    color: var(--Soft-orange);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.right h3 {
+    color: var(--Off-white);
+    padding: 1rem 0;
+    font-size: 90%;
+}
+
+.right p {
+    color: var(--Grayish-blue);
+    font-size: 15px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news {
+    padding: 1rem 0;
+}
+
+.news h3 {
+    transition: .3s;
+    cursor: pointer;
+}
+
+.right .news:nth-of-type(2) {
+    border-top: 1px solid var(--Dark-grayish-blue);
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+}
+
+.articles {
+    padding: 3rem 0;
+}
+
+/* BOTTOM ARTICLES */
+
+.artc {
+    max-height: 10rem;
+    display: flex;
+    column-gap: 1rem;
+}
+
+.artc img {
+    height: 100%;
+}
+
+.artc h2 {
+    color: var(--Grayish-blue)
+}
+
+.artc h3 {
+    color: var(--Very-dark-blue);
+}
+
+.artc p {
+    color: var(--Dark-grayish-blue);
+    font-size: 15px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 130%;
+}
+
+.content h3 {
+    transition: .3s;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) {
+
+    /* HEADER STYLE */
+
+    .main-baner {
+        min-height: 18rem;
+        background-image: url(assets/images/image-web-3-mobile.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+    }
+
+    /* MAIN STYLES */
+
+    .news {
+        font-size: 130%;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .menu-switch .close {
+        display: none;
+    }
+
+    .menu-switch.active .close {
+        display: block;
+    }
+
+    .menu-switch.active .open {
+        display: none;
+    } 
+
+    .main-header h1 {
+        font-size: 5vh;
+        line-height: 6vh;
+        padding-bottom: 1rem;
+    }
+
+    .article button {
+        margin: 1.5rem 0;
+        min-width: 50%;
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .content {
+        padding-bottom: 0.15rem;
+    }
+
+    .list {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        transition: .3s;
+        display: flex;
+        flex-direction: column;
+        padding: 8rem 0 0 1.5rem;
+        row-gap: 1.5rem;
+        background: var(--Off-white);
+    }
+
+    .list.active {
+        width: 15rem;
+        background: var(--Off-white);
+        overflow: hidden;
+    }
+
+    .list.active body {
+        overflow: hidden;
+    }
+
+    .list li {
+        display: none;
+        transition: .3s;
+    }
+
+    .list.active li {
+        display: block;
+    }
+
+    .fog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: #00000060;
+        display: none;
+        transition: .3s;
+        overflow: hidden;
+    }
+
+    .fog.active {
+        display: block;
+    }
+
+}
+
+@media (min-width: 861px) {
+
+    /* HEADER STYLE */
+
+    .menu ul {
+        display: flex;
+    }
+
+    .menu-switch {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+    }
+
+    /* MAIN STYLE */
+
+    main {
+        display: flex;
+    }
+
+    .head {
+        width: 100%;
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    .main-header {
+        width: 50%;
+    }
+
+    .main-header h1 {
+        font-size: 8vh;
+        line-height: 8vh;
+    }
+
+    .article {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem 0 0 3rem;
+    }
+
+    .main-baner {
+        width: 100%;
+        background: url(assets/images/image-web-3-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .left {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .article button {
+        flex-basis: auto;    
+    }
+
+    .right {
+        min-width: 25%;
+    }
+
+    /* BOTTOM ARTICLES */
+
+    .articles {
+        max-width: 100%;
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    .content h3 {
+        font-size: 3vh;
+    }
+
+    .content p {
+        font-size: 2vh;
+    }
+    
+}
+
+/* ACTIVE ATATES */
+
+ul.list a:hover {
+    color: var(--Soft-red)
+}
+
+.news h3:hover {
+    color: var(--Soft-orange);
+}
+
+.article button:hover {
+    background: var(--Very-dark-blue);
+}
+
+.content h3:hover {
+    color: var(--Soft-red);
+}
